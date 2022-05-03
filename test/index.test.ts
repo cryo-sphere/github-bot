@@ -8,8 +8,8 @@ import { Probot, ProbotOctokit } from "probot";
 // Requiring our fixtures
 import payload from "./fixtures/issues.opened.json";
 const issueCreatedBody = { body: "Thanks for opening this issue!" };
-import fs from "node:fs";
-import path from "node:path";
+import fs from "fs";
+import path from "path";
 
 const privateKey = fs.readFileSync(path.join(__dirname, "fixtures/mock-cert.pem"), "utf-8");
 
