@@ -14,15 +14,29 @@
 	"scripts": {
 		"build": "tsc",
 		"start": "probot run ./lib/index.js",
-		"test": "jest"
+		"test": "jest",
+		"lint": "eslint src",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"probot": "^11.0.1"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^16.2.4",
+		"@commitlint/config-angular": "^16.2.4",
+		"@sapphire/eslint-config": "^4.3.4",
+		"@sapphire/prettier-config": "^1.4.3",
+		"@sapphire/ts-config": "^3.3.4",
 		"@types/jest": "^26.0.19",
 		"@types/node": "^14.14.19",
+		"@typescript-eslint/eslint-plugin": "^5.22.0",
+		"@typescript-eslint/parser": "^5.22.0",
+		"eslint": "^8.14.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"husky": "^7.0.4",
 		"jest": "^26.6.3",
+		"lint-staged": "^12.4.1",
 		"nock": "^13.0.5",
 		"smee-client": "^1.2.2",
 		"ts-jest": "^26.4.4",
