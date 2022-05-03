@@ -49,7 +49,9 @@ export = (app: Probot) => {
 		if (!context.payload.pull_request.head.repo.fork) await deleteDNS(prNumber);
 
 		const issueComment = context.issue({
-			body: `@${creator} marked this PR as closed, the preview build is no longer available.`
+			body: context.payload.pull_request.merged
+				? `@${creator} merged this PR 🎉 and the preview build is now deleted. To view the result [click here ↗︎](https://v3.stereo-bot.xyz)`
+				: `@${creator} marked this PR as closed, the preview build is no longer available.`
 		});
 		await context.octokit.issues.createComment(issueComment);
 	});
