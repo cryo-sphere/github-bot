@@ -35,6 +35,3 @@ jobs:
 
       - name: TypeScript Compiler
         run: yarn run build
-
-      - name: Jest runner
-        run: yarn run test
