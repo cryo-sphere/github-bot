@@ -28,13 +28,29 @@ export = (app: Probot) => {
 		if (context.payload.pull_request.head.repo.fork) domain = `https://website-git-fork-${creator}-${branch}-stereo-bot.vercel.app`;
 		else domain = await createDNS(prNumber, branch, org, sha, repo);
 
-		const issueComment = context.issue({
-			body: [
+		let body: string;
+		if (context.payload.sender.login === "stereobot" && context.payload.pull_request.head.ref === "chore/crowdin-translations") {
+			body = [
+				`🔤 New translations just arrived! Make sure to double check if all translations work seamlessly with the website using [this link ↗︎](${domain}).\n`,
+				`❗Remember that the the deployment of this preview build may take a while depending on the queue size, you will receive a message from **Vercel** when the build is completed.`
+			].join("\n");
+
+			await context.octokit.issues.addLabels({
+				issue_number: prNumber,
+				owner: pr.owner,
+				repo: pr.repo,
+				labels: ["Translations"]
+			});
+		} else
+			body = [
 				`${
 					context.payload.action === "opened" ? `Hey @${creator} thanks for opening a PR.` : `Hey @${creator} thanks for reopening this PR.`
 				} A new preview will be build and deployed momentarily, to view the build [click here ↗︎](${domain}).\n`,
 				`❗Remember that the the deployment of this preview build may take a while depending on the queue size, you will receive a message from **Vercel** when the build is completed.`
-			].join("\n")
+			].join("\n");
+
+		const issueComment = context.issue({
+			body
 		});
 		await context.octokit.issues.createComment(issueComment);
 	});
