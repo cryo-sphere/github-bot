@@ -41,6 +41,12 @@ export = (app: Probot) => {
 				repo: pr.repo,
 				labels: ["Translations"]
 			});
+			await context.octokit.pulls.requestReviewers({
+				pull_number: prNumber,
+				owner: pr.owner,
+				repo: pr.repo,
+				reviewers: ["DaanGamesDG"]
+			});
 		} else
 			body = [
 				`${
