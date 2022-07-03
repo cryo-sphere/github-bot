@@ -19,7 +19,7 @@
 	},
 	"dependencies": {
 		"axios": "^0.27.2",
-		"probot": "^12.2.4"
+		"probot": "^12.2.5"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.3",
@@ -27,12 +27,12 @@
 		"@sapphire/eslint-config": "^4.3.7",
 		"@sapphire/prettier-config": "^1.4.3",
 		"@sapphire/ts-config": "^3.3.4",
-		"@types/node": "^16.11.41",
-		"@typescript-eslint/eslint-plugin": "^5.29.0",
-		"@typescript-eslint/parser": "^5.29.0",
-		"eslint": "^8.18.0",
+		"@types/node": "^16.11.42",
+		"@typescript-eslint/eslint-plugin": "^5.30.3",
+		"@typescript-eslint/parser": "^5.30.3",
+		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-prettier": "^4.2.1",
 		"husky": "^8.0.1",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
