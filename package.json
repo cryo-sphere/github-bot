@@ -24,13 +24,13 @@
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-angular": "^17.0.3",
-		"@sapphire/eslint-config": "^4.3.7",
-		"@sapphire/prettier-config": "^1.4.3",
+		"@sapphire/eslint-config": "^4.3.8",
+		"@sapphire/prettier-config": "^1.4.4",
 		"@sapphire/ts-config": "^3.3.4",
-		"@types/node": "^16.11.47",
-		"@typescript-eslint/eslint-plugin": "^5.32.0",
-		"@typescript-eslint/parser": "^5.32.0",
-		"eslint": "^8.21.0",
+		"@types/node": "^16.11.54",
+		"@typescript-eslint/eslint-plugin": "^5.34.0",
+		"@typescript-eslint/parser": "^5.34.0",
+		"eslint": "^8.22.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"husky": "^8.0.1",
@@ -41,6 +41,6 @@
 	},
 	"packageManager": "yarn@3.2.2",
 	"engines": {
-		"node": ">= v16.16.0"
+		"node": ">= v16.17.0"
 	}
 }
